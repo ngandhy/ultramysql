@@ -884,7 +884,7 @@ PyObject *Connection_connect(Connection *self, PyObject *args)
           else
             if (strcmp (pstrCharset, "utf8mb4") == 0)
             {
-              self->charset = MCS_utf8mb4_general_ci;
+              self->charset = MCS_utf8mb4_unicode_ci;
               self->PFN_PyUnicode_Encode = PyUnicode_EncodeUTF8;
             }
             else
