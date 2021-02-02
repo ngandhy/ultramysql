@@ -86,7 +86,7 @@ if sys.platform == "win32":
     libs.append("ws2_32")
 
 
-module1 = Extension('umysql',
+module1 = Extension('umysql-2018',
                 sources = ['./python/umysql.c', './python/io_cpython.c', './lib/capi.cpp', './lib/Connection.cpp', './lib/PacketReader.cpp', './lib/PacketWriter.cpp', './lib/SHA1.cpp'],
                 include_dirs = ['./python', './lib'],
                 library_dirs = [],
