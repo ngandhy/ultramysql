@@ -57,7 +57,7 @@ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
-from distutils.core import setup, Extension
+from setuptools import setup, Extension
 import shutil
 import sys
 
@@ -75,33 +75,33 @@ try:
 	shutil.rmtree("./build")
 except(OSError):
 	pass
-"""    
-    
+"""
+
 libs = []
 
 if sys.platform != "win32":
     libs.append("stdc++")
-    
+
 if sys.platform == "win32":
     libs.append("ws2_32")
 
 
-module1 = Extension('umysql-2018',
+module1 = Extension('umysql',
                 sources = ['./python/umysql.c', './python/io_cpython.c', './lib/capi.cpp', './lib/Connection.cpp', './lib/PacketReader.cpp', './lib/PacketWriter.cpp', './lib/SHA1.cpp'],
                 include_dirs = ['./python', './lib'],
                 library_dirs = [],
                 libraries=libs,
                 define_macros=[('WIN32_LEAN_AND_MEAN', None)])
-					
+
 setup (name = 'umysql-2018',
-       version = "2.63.3",
+       version = "2.63.7",
        description = "Ultra fast MySQL driver for Python",
        ext_modules = [module1],
        author="ngandhy",
        author_email="jonas.tarnstrom@esn.me",
        download_url="http://github.com/ngandhy/ultramysql",
        license="BSD License",
-       platforms=['any'],	   
-	   url="http://www.esn.me",
+       platforms=['any'],
+       url="http://www.esn.me",
        classifiers=CLASSIFIERS,
-	   )       
+),
